@@ -1,3 +1,4 @@
+
 import React from "react";
 import {
   BrowserRouter,
@@ -12,7 +13,13 @@ import Contacts from "./Contacts";
 
 function App() {
   return (
-    <BrowserRouter basename={process.env.NODE_ENV === 'production' ? '/rjs-p16' : ''}>
+    <BrowserRouter
+      basename={
+        process.env.NODE_ENV === "production"
+          ? "/p16"
+          : "/"
+      }
+    >
       <div>
         <header>
           <h1>My React Website</h1>
@@ -28,20 +35,9 @@ function App() {
 
         <main>
           <Routes>
-            <Route
-              path="/"
-              element={<Home />}
-            />
-
-            <Route
-              path="/aboutus"
-              element={<About />}
-            />
-
-            <Route
-              path="/contactus"
-              element={<Contacts />}
-            />
+            <Route path="/" element={<Home />} />
+            <Route path="/aboutus" element={<About />} />
+            <Route path="/contactus" element={<Contacts />} />
           </Routes>
         </main>
       </div>
